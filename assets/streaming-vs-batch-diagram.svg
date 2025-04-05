@@ -1,0 +1,165 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600">
+  <!-- Background with subtle grid -->
+  <defs>
+    <pattern id="grid2" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#f0f0f0" stroke-width="1"/>
+    </pattern>
+    <!-- Gradient for header -->
+    <linearGradient id="headerGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2563EB" />
+      <stop offset="100%" stop-color="#4F46E5" />
+    </linearGradient>
+    <!-- Component gradients -->
+    <linearGradient id="streamGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6" />
+      <stop offset="100%" stop-color="#2563EB" />
+    </linearGradient>
+    <linearGradient id="batchGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8B5CF6" />
+      <stop offset="100%" stop-color="#7C3AED" />
+    </linearGradient>
+    <linearGradient id="kafkaGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2D333B" />
+      <stop offset="100%" stop-color="#1A1E23" />
+    </linearGradient>
+    <linearGradient id="sparkGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E25A1C" />
+      <stop offset="100%" stop-color="#BF4814" />
+    </linearGradient>
+    <linearGradient id="postgresGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#336791" />
+      <stop offset="100%" stop-color="#254E6B" />
+    </linearGradient>
+    <linearGradient id="csvGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22C55E" />
+      <stop offset="100%" stop-color="#16A34A" />
+    </linearGradient>
+    <linearGradient id="dashGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111111" />
+      <stop offset="100%" stop-color="#000000" />
+    </linearGradient>
+    <!-- Shadow for boxes -->
+    <filter id="shadow2" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="10" flood-opacity="0.2"/>
+    </filter>
+    <!-- Text shadow -->
+    <filter id="textShadow2" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="1" stdDeviation="1" flood-opacity="0.3"/>
+    </filter>
+    <!-- Data flow animation -->
+    <marker id="arrowhead2" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#3B82F6" />
+    </marker>
+    <!-- Batch flow animation -->
+    <marker id="arrowhead-batch2" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#8B5CF6" />
+    </marker>
+  </defs>
+
+  <!-- Background pattern -->
+  <rect width="100%" height="100%" fill="#f9fafb" />
+  <rect width="100%" height="100%" fill="url(#grid2)" />
+
+  <!-- Header -->
+  <rect x="0" y="0" width="1200" height="80" fill="url(#headerGradient2)" />
+  <text x="600" y="45" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white" text-anchor="middle" filter="url(#textShadow2)">Twitter Analytics: Streaming vs Batch Processing</text>
+
+  <!-- Divider Line -->
+  <line x1="600" y1="80" x2="600" y2="600" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="10,5" />
+  
+  <!-- Labels for Both Sides -->
+  <text x="300" y="110" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#3B82F6" text-anchor="middle">Real-time Streaming Processing</text>
+  <text x="900" y="110" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#8B5CF6" text-anchor="middle">Batch Processing</text>
+  
+  <!-- STREAMING SIDE -->
+  <!-- CSV Source -->
+  <rect x="150" y="150" width="120" height="60" rx="5" ry="5" fill="url(#csvGradient2)" filter="url(#shadow2)" />
+  <text x="210" y="185" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">CSV Dataset</text>
+  
+  <!-- Kafka -->
+  <rect x="150" y="250" width="120" height="60" rx="5" ry="5" fill="url(#kafkaGradient2)" filter="url(#shadow2)" />
+  <text x="210" y="285" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">Kafka</text>
+  
+  <!-- Spark Streaming -->
+  <rect x="150" y="350" width="120" height="60" rx="5" ry="5" fill="url(#sparkGradient2)" filter="url(#shadow2)" />
+  <text x="210" y="385" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">Spark Streaming</text>
+  
+  <!-- PostgreSQL -->
+  <rect x="320" y="350" width="120" height="60" rx="5" ry="5" fill="url(#postgresGradient2)" filter="url(#shadow2)" />
+  <text x="380" y="385" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">PostgreSQL</text>
+  
+  <!-- Dashboard -->
+  <rect x="320" y="450" width="120" height="60" rx="5" ry="5" fill="url(#dashGradient)" filter="url(#shadow2)" />
+  <text x="380" y="485" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">Dashboard</text>
+  
+  <!-- BATCH SIDE -->
+  <!-- PostgreSQL Source -->
+  <rect x="750" y="150" width="120" height="60" rx="5" ry="5" fill="url(#postgresGradient2)" filter="url(#shadow2)" />
+  <text x="810" y="185" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">PostgreSQL</text>
+  
+  <!-- Batch Processing -->
+  <rect x="750" y="250" width="120" height="60" rx="5" ry="5" fill="url(#batchGradient2)" filter="url(#shadow2)" />
+  <text x="810" y="285" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">SQL Queries</text>
+  
+  <!-- Batch Analytics -->
+  <rect x="750" y="350" width="120" height="60" rx="5" ry="5" fill="url(#batchGradient2)" filter="url(#shadow2)" />
+  <text x="810" y="385" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">Batch Analysis</text>
+  
+  <!-- Dashboard -->
+  <rect x="920" y="350" width="120" height="60" rx="5" ry="5" fill="url(#dashGradient)" filter="url(#shadow2)" />
+  <text x="980" y="385" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">Dashboard</text>
+  
+  <!-- STREAMING FLOW LINES -->
+  <!-- CSV to Kafka -->
+  <line x1="210" y1="210" x2="210" y2="250" stroke="#3B82F6" stroke-width="3" marker-end="url(#arrowhead2)" />
+  <!-- Kafka to Spark -->
+  <line x1="210" y1="310" x2="210" y2="350" stroke="#3B82F6" stroke-width="3" marker-end="url(#arrowhead2)" />
+  <!-- Spark to PostgreSQL -->
+  <line x1="270" y1="380" x2="320" y2="380" stroke="#3B82F6" stroke-width="3" marker-end="url(#arrowhead2)" />
+  <!-- PostgreSQL to Dashboard -->
+  <line x1="380" y1="410" x2="380" y2="450" stroke="#3B82F6" stroke-width="3" marker-end="url(#arrowhead2)" />
+  
+  <!-- BATCH FLOW LINES -->
+  <!-- PostgreSQL to SQL Queries -->
+  <line x1="810" y1="210" x2="810" y2="250" stroke="#8B5CF6" stroke-width="3" marker-end="url(#arrowhead-batch2)" />
+  <!-- SQL Queries to Batch Analysis -->
+  <line x1="810" y1="310" x2="810" y2="350" stroke="#8B5CF6" stroke-width="3" marker-end="url(#arrowhead-batch2)" />
+  <!-- Batch Analysis to Dashboard -->
+  <line x1="870" y1="380" x2="920" y2="380" stroke="#8B5CF6" stroke-width="3" marker-end="url(#arrowhead-batch2)" />
+  
+  <!-- Feature Boxes -->
+  <!-- Streaming Features -->
+  <rect x="100" y="520" width="400" height="60" rx="5" ry="5" fill="white" filter="url(#shadow2)" />
+  <text x="120" y="545" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#3B82F6">Real-time Features:</text>
+  <text x="120" y="565" font-family="Arial, sans-serif" font-size="12" fill="#4B5563">• Low-latency processing • Immediate insights • Streaming analytics</text>
+  
+  <!-- Batch Features -->
+  <rect x="700" y="520" width="400" height="60" rx="5" ry="5" fill="white" filter="url(#shadow2)" />
+  <text x="720" y="545" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#8B5CF6">Batch Features:</text>
+  <text x="720" y="565" font-family="Arial, sans-serif" font-size="12" fill="#4B5563">• Historical analysis • Complex aggregations • Higher accuracy</text>
+
+  <!-- Animated data flow dots - Streaming -->
+  <circle r="4" fill="#3B82F6">
+    <animateMotion dur="2s" repeatCount="indefinite" path="M210 210 L210 250" />
+  </circle>
+  <circle r="4" fill="#3B82F6">
+    <animateMotion dur="2s" repeatCount="indefinite" path="M210 310 L210 350" />
+  </circle>
+  <circle r="4" fill="#3B82F6">
+    <animateMotion dur="1.5s" repeatCount="indefinite" path="M270 380 L320 380" />
+  </circle>
+  <circle r="4" fill="#3B82F6">
+    <animateMotion dur="1.5s" repeatCount="indefinite" path="M380 410 L380 450" />
+  </circle>
+  
+  <!-- Animated data flow dots - Batch -->
+  <circle r="4" fill="#8B5CF6">
+    <animateMotion dur="3s" repeatCount="indefinite" path="M810 210 L810 250" />
+  </circle>
+  <circle r="4" fill="#8B5CF6">
+    <animateMotion dur="3s" repeatCount="indefinite" path="M810 310 L810 350" />
+  </circle>
+  <circle r="4" fill="#8B5CF6">
+    <animateMotion dur="2s" repeatCount="indefinite" path="M870 380 L920 380" />
+  </circle>
+</svg>

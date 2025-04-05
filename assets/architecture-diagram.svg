@@ -1,0 +1,189 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700">
+  <!-- Background with subtle grid -->
+  <defs>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#f0f0f0" stroke-width="1"/>
+    </pattern>
+    <!-- Gradient for header -->
+    <linearGradient id="headerGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2563EB" />
+      <stop offset="100%" stop-color="#4F46E5" />
+    </linearGradient>
+    <!-- Component gradients -->
+    <linearGradient id="twitterGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1DA1F2" />
+      <stop offset="100%" stop-color="#0D8BD9" />
+    </linearGradient>
+    <linearGradient id="kafkaGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2D333B" />
+      <stop offset="100%" stop-color="#1A1E23" />
+    </linearGradient>
+    <linearGradient id="sparkGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E25A1C" />
+      <stop offset="100%" stop-color="#BF4814" />
+    </linearGradient>
+    <linearGradient id="postgresGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#336791" />
+      <stop offset="100%" stop-color="#254E6B" />
+    </linearGradient>
+    <linearGradient id="nextjsGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111111" />
+      <stop offset="100%" stop-color="#000000" />
+    </linearGradient>
+    <!-- Shadow for boxes -->
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="10" flood-opacity="0.2"/>
+    </filter>
+    <!-- Text shadow -->
+    <filter id="textShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="1" stdDeviation="1" flood-opacity="0.3"/>
+    </filter>
+    <!-- Data flow animation -->
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#4B5563" />
+    </marker>
+    <!-- Icons -->
+    <symbol id="twitter-icon" viewBox="0 0 24 24">
+      <path d="M23.643 4.937c-.835.37-1.732.62-2.675.733.962-.576 1.7-1.49 2.048-2.578-.9.534-1.897.922-2.958 1.13-.85-.904-2.06-1.47-3.4-1.47-2.572 0-4.658 2.086-4.658 4.66 0 .364.042.718.12 1.06-3.873-.195-7.304-2.05-9.602-4.868-.4.69-.63 1.49-.63 2.342 0 1.616.823 3.043 2.072 3.878-.764-.025-1.482-.234-2.11-.583v.06c0 2.257 1.605 4.14 3.737 4.568-.392.106-.803.162-1.227.162-.3 0-.593-.028-.877-.082.593 1.85 2.313 3.198 4.352 3.234-1.595 1.25-3.604 1.995-5.786 1.995-.376 0-.747-.022-1.112-.065 2.062 1.323 4.51 2.093 7.14 2.093 8.57 0 13.255-7.098 13.255-13.254 0-.2-.005-.402-.014-.602.91-.658 1.7-1.477 2.323-2.41z" fill="#1DA1F2" />
+    </symbol>
+    <symbol id="kafka-icon" viewBox="0 0 24 24">
+      <path d="M11.362 2.93c-0.125 0.124-0.186 0.28-0.186 0.466 0 0.186 0.061 0.342 0.186 0.466 0.124 0.124 0.28 0.187 0.466 0.187 0.186 0 0.342-0.063 0.466-0.187 0.124-0.124 0.187-0.28 0.187-0.466 0-0.186-0.063-0.342-0.187-0.466-0.124-0.124-0.28-0.186-0.466-0.186-0.186 0-0.342 0.062-0.466 0.186z" fill="#FFFFFF" />
+      <path d="M10.196 0c-0.156 0-0.28 0.063-0.373 0.186-0.093 0.123-0.14 0.28-0.14 0.466l0.047 13.021-6.038 0.56c-0.156 0-0.28 0.061-0.373 0.185-0.093 0.125-0.14 0.28-0.14 0.467v0.653c0 0.186 0.047 0.342 0.14 0.467 0.093 0.124 0.217 0.185 0.373 0.185l6.038-0.559 0.047 6.042c0 0.186 0.063 0.342 0.187 0.466 0.124 0.124 0.28 0.186 0.466 0.186h0.653c0.186 0 0.342-0.062 0.466-0.186 0.125-0.124 0.187-0.28 0.187-0.466l-0.047-5.949 12.182-1.12c0.155 0 0.28-0.06 0.373-0.185 0.093-0.124 0.139-0.28 0.139-0.466v-0.653c0-0.186-0.046-0.342-0.139-0.467-0.093-0.124-0.218-0.186-0.373-0.186l-12.182 1.12-0.047-12.929c0-0.186-0.062-0.342-0.187-0.466-0.124-0.124-0.28-0.186-0.466-0.186h-0.653z" fill="#FFFFFF"/>
+    </symbol>
+    <symbol id="spark-icon" viewBox="0 0 32 32">
+      <path d="M16 4.667c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.333 18.667h-2.667v-10.667h2.667v10.667zm5.333 0h-2.667v-10.667h2.667v10.667zm-2.667-12h-2.667v-2.667h2.667v2.667z" fill="#FFFFFF"/>
+    </symbol>
+    <symbol id="postgres-icon" viewBox="0 0 24 24">
+      <path d="M20.897 14.956c-0.2-1.714-0.41-3.354-0.414-5.082-0.006-2.684 0.212-4.982-0.566-6.565-1.264-2.574-3.859-4.31-5.5-4.31-1.621 0.004-3.775 1.424-5.131 3.77-0.901 1.55-1.286 3.433-1.323 6.163-0.017 1.364-0.169 2.895-0.33 4.703-2.729 1.199-2.547 3.478-0.89 4.191 0.98 0.421 2.196 0.67 3.583 0.619 0.98 2.032 2.739 3.56 4.674 3.556 2 0.005 3.796-1.648 4.791-3.72 1.211 0.008 2.284-0.278 3.108-0.762 1.393-0.821 1.318-2.666-1.002-3.563z" fill="#FFFFFF"/>
+    </symbol>
+    <symbol id="nextjs-icon" viewBox="0 0 24 24">
+      <path d="M11.5725 0c-.1763 0-.3098.0013-.3584.0067-.0516.0053-.2159.021-.3636.0328-3.4088.3077-6.6017 2.1463-8.624 4.9728C1.1004 6.584.3802 8.3666.1082 10.255c-.0962.659-.108.8537-.108 1.7474s.012 1.0884.108 1.7476c.652 4.506 3.8591 8.2919 8.2087 9.6945.7789.2511 1.6.4223 2.5337.5255.3636.04 1.9354.04 2.299 0 1.6117-.1783 2.9772-.577 4.3237-1.2643.2065-.1056.2464-.1337.2183-.1573-.0188-.0139-.8987-1.1938-1.9543-2.62l-1.919-2.592-2.4047-3.5583c-1.3231-1.9564-2.4117-3.556-2.4211-3.556-.0094-.0026-.0187 1.5787-.0187 3.509 0 3.3802.0093 3.5162.0933 3.595.0373.0394.1622.0865.2726.1056.1914.0334.6854.0333.8774 0 .1056-.0187.2118-.058.2805-.1056.1034-.0711.1142-.1396.1142-3.595V9.5337h.0093c.0026 0 .77 1.1094 1.7064 2.4658 1.6512 2.3947 1.8668 2.7162 2.0205 2.9197.49.6582 1.3366 1.841 1.517 2.1234.0653.1024.1535.1399.3221.1399.1809 0 .3368-.0785.3927-.1969.016-.0334 1.4934-2.8346 2.054-3.9035.6056-1.1614 1.7511-3.3534 3.0054-5.7497.2118-.4038.3367-.5387.4533-.588.1434-.0615.2981-.0586.4394.0081.0653.0298.1491.0878.1869.1337.0934.1135.0841-.0173.0841 4.198v3.9171c0 3.383-.0068 3.5148.0999 3.5927.0933.067.1622.0865.2977.0865h.3926l.1622-.0453.1098-.0452v-7.8262c0-7.8166-.0002-7.8268-.0746-7.9319-.0855-.12-.2272-.1969-.4113-.1969-.2378 0-.3144.0441-.4741.2537-.0733.0961-.9828 1.8645-2.0205 3.9302-.8887 1.7638-1.6434 3.2543-1.6727 3.3115l-.0533.1038h-.0292c-.0133 0-.0372-.0199-.0533-.0465-.0161-.0254-.7479-1.1497-1.6263-2.4992-2.9953-4.6243-3.8566-5.9413-3.939-6.0321-.0739-.0825-.1195-.1097-.2594-.15-.1024-.0297-.133-.0309-.3583-.0309z" fill="#FFFFFF"/>
+    </symbol>
+  </defs>
+
+  <!-- Background pattern -->
+  <rect width="100%" height="100%" fill="#f9fafb" />
+  <rect width="100%" height="100%" fill="url(#grid)" />
+
+  <!-- Header -->
+  <rect x="0" y="0" width="1200" height="80" fill="url(#headerGradient)" />
+  <text x="600" y="45" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white" text-anchor="middle" filter="url(#textShadow)">Twitter Analytics Pipeline Architecture</text>
+
+  <!-- Twitter API -->
+  <g transform="translate(150, 180)">
+    <rect x="0" y="0" width="160" height="140" rx="10" ry="10" fill="url(#twitterGradient)" filter="url(#shadow)" />
+    <use href="#twitter-icon" x="60" y="40" width="40" height="40" />
+    <text x="80" y="110" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="middle">Twitter API</text>
+  </g>
+
+  <!-- Twitter Stream -->
+  <g transform="translate(150, 380)">
+    <rect x="0" y="0" width="160" height="140" rx="10" ry="10" fill="#3B82F6" filter="url(#shadow)" />
+    <text x="80" y="60" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="middle">Twitter</text>
+    <text x="80" y="85" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="middle">Stream</text>
+    <text x="80" y="110" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">(Python)</text>
+  </g>
+
+  <!-- Kafka -->
+  <g transform="translate(400, 280)">
+    <rect x="0" y="0" width="160" height="140" rx="10" ry="10" fill="url(#kafkaGradient)" filter="url(#shadow)" />
+    <use href="#kafka-icon" x="60" y="40" width="40" height="40" />
+    <text x="80" y="100" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="middle">Kafka</text>
+    <text x="80" y="125" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">(Docker)</text>
+  </g>
+
+  <!-- Spark -->
+  <g transform="translate(650, 180)">
+    <rect x="0" y="0" width="160" height="140" rx="10" ry="10" fill="url(#sparkGradient)" filter="url(#shadow)" />
+    <use href="#spark-icon" x="60" y="40" width="40" height="40" />
+    <text x="80" y="100" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="middle">Spark Streaming</text>
+    <text x="80" y="125" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">(PySpark)</text>
+  </g>
+
+  <!-- PostgreSQL -->
+  <g transform="translate(650, 380)">
+    <rect x="0" y="0" width="160" height="140" rx="10" ry="10" fill="url(#postgresGradient)" filter="url(#shadow)" />
+    <use href="#postgres-icon" x="60" y="40" width="40" height="40" />
+    <text x="80" y="100" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="middle">PostgreSQL</text>
+    <text x="80" y="125" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">(Supabase)</text>
+  </g>
+
+  <!-- Next.js -->
+  <g transform="translate(900, 280)">
+    <rect x="0" y="0" width="160" height="140" rx="10" ry="10" fill="url(#nextjsGradient)" filter="url(#shadow)" />
+    <use href="#nextjs-icon" x="60" y="40" width="40" height="40" />
+    <text x="80" y="100" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="middle">Dashboard</text>
+    <text x="80" y="125" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">(Next.js)</text>
+  </g>
+
+  <!-- Connection lines -->
+  <!-- Twitter API to Twitter Stream -->
+  <path d="M230 320 L230 380" stroke="#4B5563" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
+  
+  <!-- Twitter Stream to Kafka -->
+  <path d="M310 450 L400 350" stroke="#4B5563" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
+  
+  <!-- Kafka to Spark -->
+  <path d="M560 310 L650 250" stroke="#4B5563" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
+  
+  <!-- Spark to Kafka (processed data) -->
+  <path d="M650 250 L560 350" stroke="#4B5563" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Kafka to PostgreSQL -->
+  <path d="M560 390 L650 450" stroke="#4B5563" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
+  
+  <!-- PostgreSQL to Next.js -->
+  <path d="M810 450 L900 350" stroke="#4B5563" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
+
+  <!-- Data Flow Labels -->
+  <text x="230" y="350" font-family="Arial, sans-serif" font-size="12" fill="#4B5563" text-anchor="middle">Fetch tweets</text>
+  <text x="350" y="410" font-family="Arial, sans-serif" font-size="12" fill="#4B5563" text-anchor="middle">Raw tweets</text>
+  <text x="600" y="290" font-family="Arial, sans-serif" font-size="12" fill="#4B5563" text-anchor="middle">Consume</text>
+  <text x="600" y="310" font-family="Arial, sans-serif" font-size="12" fill="#4B5563" text-anchor="middle">Processed data</text>
+  <text x="600" y="410" font-family="Arial, sans-serif" font-size="12" fill="#4B5563" text-anchor="middle">Store data</text>
+  <text x="850" y="410" font-family="Arial, sans-serif" font-size="12" fill="#4B5563" text-anchor="middle">Query analytics</text>
+
+  <!-- Legend -->
+  <rect x="120" y="580" width="960" height="80" rx="6" ry="6" fill="white" filter="url(#shadow)" />
+  <text x="600" y="605" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#374151" text-anchor="middle">Pipeline Flow</text>
+  
+  <line x1="200" y1="630" x2="250" y2="630" stroke="#4B5563" stroke-width="2" marker-end="url(#arrowhead)" />
+  <text x="300" y="635" font-family="Arial, sans-serif" font-size="14" fill="#4B5563">Data Flow</text>
+  
+  <rect x="400" y="620" width="20" height="20" rx="3" ry="3" fill="url(#twitterGradient)" />
+  <text x="430" y="635" font-family="Arial, sans-serif" font-size="14" fill="#4B5563">External API</text>
+  
+  <rect x="550" y="620" width="20" height="20" rx="3" ry="3" fill="#3B82F6" />
+  <text x="580" y="635" font-family="Arial, sans-serif" font-size="14" fill="#4B5563">Custom Service</text>
+  
+  <rect x="700" y="620" width="20" height="20" rx="3" ry="3" fill="#1F2937" />
+  <text x="730" y="635" font-family="Arial, sans-serif" font-size="14" fill="#4B5563">Infrastructure</text>
+  
+  <rect x="850" y="620" width="20" height="20" rx="3" ry="3" fill="url(#postgresGradient)" />
+  <text x="880" y="635" font-family="Arial, sans-serif" font-size="14" fill="#4B5563">Storage</text>
+
+  <!-- Animated data flow dots along paths -->
+  <circle class="data-point" cx="0" cy="0" r="3" fill="#3B82F6">
+    <animateMotion dur="3s" repeatCount="indefinite" path="M230 320 L230 380" />
+  </circle>
+  
+  <circle class="data-point" cx="0" cy="0" r="3" fill="#3B82F6">
+    <animateMotion dur="4s" repeatCount="indefinite" path="M310 450 L400 350" />
+  </circle>
+  
+  <circle class="data-point" cx="0" cy="0" r="3" fill="#3B82F6">
+    <animateMotion dur="3s" repeatCount="indefinite" path="M560 310 L650 250" />
+  </circle>
+  
+  <circle class="data-point" cx="0" cy="0" r="3" fill="#E25A1C">
+    <animateMotion dur="3.5s" repeatCount="indefinite" path="M650 250 L560 350" />
+  </circle>
+  
+  <circle class="data-point" cx="0" cy="0" r="3" fill="#E25A1C">
+    <animateMotion dur="4s" repeatCount="indefinite" path="M560 390 L650 450" />
+  </circle>
+  
+  <circle class="data-point" cx="0" cy="0" r="3" fill="#336791">
+    <animateMotion dur="3.5s" repeatCount="indefinite" path="M810 450 L900 350" />
+  </circle>
+</svg>

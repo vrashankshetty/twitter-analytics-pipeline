@@ -1,0 +1,6 @@
+tweepy
+python-dotenv
+pyspark
+pandas
+kafka-python
+psycopg2-binary
