@@ -100,6 +100,8 @@ export default function PerformanceMetricsCard({ data }: PerformanceMetricsCardP
                 <TableHead>Records</TableHead>
                 <TableHead>Records/Sec</TableHead>
                 <TableHead>Accuracy</TableHead>
+                <TableHead>CPU Usage</TableHead>
+                <TableHead>Memory Usage</TableHead>
                 <TableHead>Execution Type</TableHead>
               </TableRow>
             </TableHeader>
@@ -120,6 +122,8 @@ export default function PerformanceMetricsCard({ data }: PerformanceMetricsCardP
                       : Number.parseFloat(metric.records_per_second).toFixed(2)}
                   </TableCell>
                   <TableCell>{metric.accuracy}%</TableCell>
+                  <TableCell>{metric.cpu_percent}%</TableCell>
+                  <TableCell>{Math.abs(metric.memory_used_mb)}mb</TableCell>
                   <TableCell>{metric.execution_type}</TableCell>
                 </TableRow>
               ))}

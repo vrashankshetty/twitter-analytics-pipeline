@@ -20,9 +20,10 @@ SUPABASE_DB_PORT = os.getenv("SUPABASE_DB_PORT", "5432")
 SUPABASE_DB_NAME = os.getenv("SUPABASE_DB_NAME", "postgres")
 SUPABASE_DB_USER = os.getenv("SUPABASE_DB_USER")
 SUPABASE_DB_PASSWORD = os.getenv("SUPABASE_DB_PASSWORD")
-SUPABASE_DB_URL = os.getenv("SUPABASE_DB_URL")  # Direct connection URL if available
+SUPABASE_DB_URL = os.getenv("SUPABASE_DB_URL") 
 
 # Kafka settings
+
 KAFKA_BOOTSTRAP_SERVERS = 'localhost:9092'
 PROCESSED_TWEETS_TOPIC = 'processed_tweets_topic'
 PERFORMANCE_METRICS_TOPIC = 'performance_metrics_topic'
@@ -86,6 +87,8 @@ def create_tables(conn):
                     accuracy FLOAT,
                     batch_id TEXT,
                     records_processed INTEGER,
+                    cpu_percent FLOAT,
+                    memory_used_mb FLOAT,
                     recorded_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
                 );
             """)
@@ -100,12 +103,10 @@ def create_tables(conn):
 def connect_to_database():
     """Connect to PostgreSQL database"""
     try:
-        # Try to connect using direct URL if available
         if SUPABASE_DB_URL:
             logger.info(f"Connecting using DB URL")
             conn = psycopg2.connect(SUPABASE_DB_URL)
         else:
-            # Connect using separate parameters
             conn = psycopg2.connect(
                 host=SUPABASE_DB_HOST,
                 port=SUPABASE_DB_PORT,
@@ -210,15 +211,17 @@ def store_performance_metrics(conn, metrics):
                 metric['records_per_second'],
                 metric['accuracy'],
                 metric['batch_id'],
-                metric['records_processed']
+                metric['records_processed'],
+                metric['cpu_percent'],
+                metric["memory_used_mb"]
             ) for metric in metrics]
             
             # Insert performance metrics
             execute_batch(cur, """
                 INSERT INTO performance (
                     execution_type, processing_time, records_per_second, 
-                    accuracy, batch_id, records_processed
-                ) VALUES (%s, %s, %s, %s, %s, %s)
+                    accuracy, batch_id, records_processed,cpu_percent,memory_used_mb
+                ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
             """, performance_data)
             
             conn.commit()

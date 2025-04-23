@@ -16,7 +16,7 @@ KAFKA_BOOTSTRAP_SERVERS = 'localhost:9092'
 KAFKA_TOPIC = 'tweets_topic'
 CSV_FILE = 'twitter_dataset.csv'
 
-def process_csv_to_kafka(csv_file, producer, topic, batch_size=500, delay=0.1):
+def process_csv_to_kafka(csv_file, producer, topic, batch_size=5000, delay=0.1):
     """
     Read tweets from CSV file and send to Kafka
     
